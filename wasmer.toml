@@ -1,0 +1,18 @@
+# wasmer.toml
+[package]
+name = "rbelleville2159/quarterpong"
+version = "1.0.0"
+description = "Quarter Pong static site deployed with Wasmer"
+readme = "README.md"
+
+[dependencies]
+# Use a Wasm web server like wasmer/static-web-server
+# Note: Package names and versions may vary. Check the Wasmer registry.
+static-server = "wasmer/static-web-server@1.0.0"
+
+[command.serve]
+module = "static-server"
+
+[fs]
+/root
+"./" = "/"
