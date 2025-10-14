@@ -1,0 +1,36 @@
+# The Wasmer configuration file for a static web app deployment to Wasmer Edge.
+
+# Defines the package metadata
+package:
+  # IMPORTANT: CHANGE THIS to your actual GitHub username and a unique site name (e.g., 'johndoe/quarter-pong-site')
+  name: "rbelleville2159/quarterpong.wasmer.app" 
+  version: "0.1.1" # Updated version number
+  description: "Quarter Pong"
+  
+# Defines the WebAssembly module used to serve the site
+modules:
+  - name: "static-server"
+    # We use the official wasmer/static-html package to serve the content
+    source: "wasmer/static-html@latest" 
+    
+# Defines the command that runs the server module
+command:
+  name: "start-server"
+  module: "static-server"
+  container:
+    environment:
+      # The server will run on port 8000
+      - name: "PORT"
+        value: "8000"
+    fs:
+      # Map the root path of the server (/) to the local project root directory (.)
+      # This ensures index.html is served automatically.
+      - mount_path: "/" 
+        local_path: "."
+    
+# Defines the public access point for the deployed application
+webc:
+  bindings:
+    - public_url: "/" 
+      # Expose the server module running on port 8000 to the public URL
+      port: 8000 
