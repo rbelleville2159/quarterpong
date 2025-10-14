@@ -1,0 +1,13 @@
+kind: wasmer.io/App.v0
+name: quarterpong
+owner: rbelleville2159
+package: sha256:2f5d25153cbb794e986c2637672ac8dd1f5c01f3c5ff3cc4abae673059f4d0a6
+cli_args:
+- --root
+- _wasmer_root
+- --directory-listing
+- 'true'
+- --port
+- '80'
+- --host
+- '::'
