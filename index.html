@@ -76,9 +76,13 @@
                  style="max-width: 800px; height: 0; overflow: hidden;">
                 
                 <!-- The content inside is absolutely positioned to cover the height created by padding-bottom -->
-                <p class="text-4xl text-gray-600 absolute inset-0 flex items-center justify-center">
-                    [ Logo / Banner ]
-                </p>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <img src="qpbwsolo.svg" 
+                         alt="Quarter Pong Logo" 
+                         class="w-full h-full object-contain p-4"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x577/111/FF3366?text=Logo+File+Missing'; this.classList.remove('p-4');"
+                    >
+                </div>
             </div>
         </div>
 
