@@ -3,7 +3,7 @@
 # Defines the package metadata
 package:
   # IMPORTANT: CHANGE THIS to your actual GitHub username and a unique site name (e.g., 'johndoe/quarter-pong-site')
-  name: "rbelleville2159/quarterpong.wasmer.app" 
+  name: "rbelleville2159/quarterpong" 
   version: "0.1.1" # Updated version number
   description: "Quarter Pong"
   
