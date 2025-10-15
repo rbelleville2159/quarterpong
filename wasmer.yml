@@ -34,3 +34,5 @@ webc:
     - public_url: "/" 
       # Expose the server module running on port 8000 to the public URL
       port: 8000 
+redirect:
+  force_https: true
