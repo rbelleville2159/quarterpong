@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter Pong - Official Rules</title>
+    <!-- Favicon for the browser tab (using placeholder - replace href with your actual favicon path if needed) -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@wasmer/sdk@latest/dist/index.js"></script>
+    <style>
+        /* Custom CSS for a dark, neon arcade theme */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        :root {
+            /* Primary Accent Color: Neon Red */
+            --color-neon-red: #FF3366; 
+            /* Secondary Accent Color: Neon Blue */
+            --color-neon-blue: #33CCFF;
+        }
+
+        body {
+            font-family: 'VT323', monospace; /* Retro arcade font */
+            background-color: #0d0d0d; /* Very dark background */
+        }
+        
+        /* Neon Red Styles (Primary) */
+        .neon-red-border {
+            border: 2px solid var(--color-neon-red);
+            box-shadow: 0 0 10px var(--color-neon-red), 0 0 5px rgba(255, 51, 102, 0.5);
+        }
+
+        .neon-red-text {
+            color: var(--color-neon-red);
+            text-shadow: 0 0 5px rgba(255, 51, 102, 0.7);
+        }
+
+        /* Neon Blue Styles (Secondary/Interactive) */
+        .neon-blue-border {
+            border: 2px solid var(--color-neon-blue);
+            box-shadow: 0 0 10px var(--color-neon-blue), 0 0 5px rgba(51, 204, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        /* Utility for Rules Text */
+        .rules-text {
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .rules-heading {
+            color: var(--color-neon-blue);
+            text-shadow: 0 0 5px rgba(51, 204, 255, 0.7);
+        }
+
+        /* Re-using hover style for buttons/links */
+        .neon-blue-box:hover {
+            background-color: var(--color-neon-blue);
+            color: #000 !important; /* Override text color on hover */
+            box-shadow: 0 0 25px var(--color-neon-blue);
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<!-- Body now aligns content to the top (justify-start) for scrollable documents -->
+<body class="min-h-screen flex flex-col items-center justify-start p-4 pt-12">
+
+    <!-- Main Rules Container -->
+    <main class="w-full max-w-4xl p-8 bg-gray-900 rounded-xl neon-red-border">
+        
+        <!-- Back Button / Navigation -->
+        <div class="mb-8">
+            <!-- Note: This button currently logs a message. You would link this to 'index.html' in a real setup. -->
+            <button onclick="window.location.href='index.html'" 
+                    class="py-2 px-4 rounded neon-blue-border text-lg text-gray-200 neon-blue-box hover:text-black transition duration-300">
+                &lt; Back Home
+            </button>
+        </div>
+
+        <!-- Header / Main Title Area -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl sm:text-7xl font-bold uppercase tracking-widest neon-red-text">
+                Official Rules
+            </h1>
+        </header>
+
+        <!-- Rules Content -->
+        <div class="space-y-10">
+            
+            <!-- Section: Setup -->
+            <div>
+                <h2 class="text-4xl uppercase font-bold mb-4 rules-heading">
+                    I. The Setup
+                </h2>
+                <ul class="list-disc ml-8 rules-text text-xl space-y-3">
+                    <li>TBD</li>
+                    <li>TBD</li>
+                    <li>TBD</li>
+                    <li>TBD</li>
+                </ul>
+            </div>
+
+            <!-- Section: Gameplay -->
+            <div class="pt-6 border-t border-gray-700">
+                <h2 class="text-4xl uppercase font-bold mb-4 rules-heading">
+                    II. The Game
+                </h2>
+                <ul class="list-disc ml-8 rules-text text-xl space-y-3">
+                    <li>TBD</li>
+                    <li>TBD</li>
+                    <li>TBD</li>
+                    <li>TBD</li>
+                </ul>
+            </div>
+            
+            <!-- Section: Scoring & Elimination -->
+            <div class="pt-6 border-t border-gray-700">
+                <h2 class="text-4xl uppercase font-bold mb-4 rules-heading">
+                    III. The Conclusion
+                </h2>
+                <ul class="list-disc ml-8 rules-text text-xl space-y-3">
+                    <li>TBD</li>
+                    <li>TBD</li>
+                    <li>TBD</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </main>
+    
+</body>
+</html>
