@@ -49,9 +49,9 @@
             cursor: pointer;
         }
 
-        /* Aspect Ratio Container */
+        /* Aspect Ratio Container (Current padding-bottom: 28% for a wide banner look) */
         .logo-aspect-ratio {
-            padding-bottom: 20%; 
+            padding-bottom: 28%; 
         }
     </style>
 </head>
@@ -61,25 +61,26 @@
     <!-- Main Arcade Container: Now fills full available width (w-full) -->
     <main class="w-full p-6 bg-gray-900 rounded-xl neon-red-border">
         
-        <!-- Header / Main Title Area -->
+        <!-- Header / Main Title Area: Text size reduced and made responsive -->
         <header class="text-center mb-8">
-            <h1 class="text-7xl font-bold uppercase tracking-widest neon-red-text">
+            <h1 class="text-3xl sm:text-5xl font-bold uppercase tracking-widest neon-red-text">
                 Introducing the greatest party game ever created...
             </h1>
         </header>
 
-        <!-- Large Logo / Banner Placeholder: Adjusted for 800x577 aspect ratio -->
-        <div class="flex justify-center mb-10">
-            <!-- Inner container to cap max width at 420px (30% shorter than 600px) and enforce aspect ratio -->
+        <!-- Large Logo / Banner Placeholder: Max width significantly reduced to 350px -->
+        <div class="flex justify-center mb-6"> <!-- Reduced mb-10 to mb-6 -->
+            <!-- Inner container to cap max width at 350px and enforce aspect ratio -->
             <div id="logo-area" 
                  class="w-full bg-black rounded-lg neon-blue-border relative logo-aspect-ratio" 
-                 style="max-width: 577px; height: 0; overflow: hidden;">
+                 style="max-width: 350px; height: 0; overflow: hidden;">
                 
                 <!-- The content inside is absolutely positioned to cover the height created by padding-bottom -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <img src="qpbwlogo.svg" 
+                    <img src="qpbwsolo.svg" 
                          alt="Quarter Pong Logo" 
                          class="w-full h-full object-contain p-0"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x577/111/FF3366?text=Logo+File+Missing'; this.classList.remove('p-4'); this.classList.add('p-0');"
                     >
                 </div>
             </div>
@@ -150,9 +151,12 @@
     </main>
 
     <!-- Footer / Credit -->
-  <!-- <footer class="mt-10 text-center text-gray-500">
+    <!-- The footer is still commented out, saving vertical space. -->
+    <!--
+    <footer class="mt-10 text-center text-gray-500">
         <p class="text-sm">Made in the USA | Patent Pending</p>
     </footer>
-   -->  
+    -->
+    
 </body>
 </html>
