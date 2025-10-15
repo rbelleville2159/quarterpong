@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter Pong - Official Store</title>
+    <!-- Favicon link remains consistent -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@wasmer/sdk@latest/dist/index.js"></script>
+    <style>
+        /* Custom CSS for a dark, neon arcade theme */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        :root {
+            /* Primary Accent Color: Neon Red */
+            --color-neon-red: #FF3366; 
+            /* Secondary Accent Color: Neon Blue */
+            --color-neon-blue: #33CCFF;
+        }
+
+        body {
+            font-family: 'VT323', monospace; /* Retro arcade font */
+            background-color: #0d0d0d; /* Very dark background */
+        }
+        
+        /* Neon Red Styles (Primary) */
+        .neon-red-border {
+            border: 2px solid var(--color-neon-red);
+            box-shadow: 0 0 10px var(--color-neon-red), 0 0 5px rgba(255, 51, 102, 0.5);
+        }
+
+        .neon-red-text {
+            color: var(--color-neon-red);
+            text-shadow: 0 0 5px rgba(255, 51, 102, 0.7);
+        }
+
+        /* Neon Blue Styles (Secondary/Interactive) */
+        .neon-blue-border {
+            border: 2px solid var(--color-neon-blue);
+            box-shadow: 0 0 10px var(--color-neon-blue), 0 0 5px rgba(51, 204, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        /* Utility for Product Text */
+        .rules-text { /* Re-using rules-text class for consistency */
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .rules-heading {
+            color: var(--color-neon-blue);
+            text-shadow: 0 0 5px rgba(51, 204, 255, 0.7);
+        }
+
+        /* Re-using hover style for buttons/links/products */
+        .neon-blue-box:hover {
+            background-color: var(--color-neon-blue);
+            color: #000 !important; /* Override text color on hover */
+            box-shadow: 0 0 25px var(--color-neon-blue);
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        /* Specific style for Buy Button */
+        .buy-button {
+            background-color: var(--color-neon-red);
+            box-shadow: 0 0 15px var(--color-neon-red);
+            transition: all 0.3s ease;
+            color: #0d0d0d;
+        }
+        .buy-button:hover {
+            background-color: #FF6699;
+            box-shadow: 0 0 20px var(--color-neon-red);
+            transform: translateY(-2px);
+        }
+        
+    </style>
+</head>
+<!-- Body now aligns content to the top (justify-start) for scrollable documents -->
+<body class="min-h-screen flex flex-col items-center justify-start p-4 pt-12">
+
+    <!-- Main Store Container -->
+    <main class="w-full max-w-5xl p-8 bg-gray-900 rounded-xl neon-red-border">
+        
+        <!-- Back Button / Navigation -->
+        <div class="mb-8">
+            <!-- Link to the home page -->
+            <button onclick="window.location.href='index.html'" 
+                    class="py-2 px-4 rounded neon-blue-border text-lg text-gray-200 neon-blue-box hover:text-black transition duration-300">
+                &lt; Back Home
+            </button>
+        </div>
+
+        <!-- Header / Main Title Area -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl sm:text-7xl font-bold uppercase tracking-widest neon-red-text">
+                Official Gear & Game Sets
+            </h1>
+            <p class="text-xl rules-text mt-4">Level up your game with our exclusive, high-quality Quarter Pong merchandise!</p>
+        </header>
+
+        <!-- Product Listings Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Product Card 1: Official Game Kit -->
+            <div class="bg-gray-800 p-6 rounded-lg neon-blue-border neon-blue-box flex flex-col justify-between">
+                <div>
+                    <!-- Placeholder Image -->
+                    <img src="https://placehold.co/400x250/111/33CCFF?text=QP+PRO+KIT" 
+                         alt="Quarter Pong Pro Kit" class="w-full rounded mb-4">
+
+                    <h2 class="text-3xl uppercase font-bold mb-2 rules-heading">
+                        Pro Game Kit
+                    </h2>
+                    <p class="text-xl font-bold neon-red-text mb-4">$TBD</p>
+                    <p class="rules-text text-lg mb-4">
+                        Everything you need to play: cup, balls, playing base.
+                    </p>
+                </div>
+                <button onclick="console.log('Added Pro Kit to cart')" 
+                        class="buy-button py-3 px-6 rounded-md uppercase font-bold text-xl mt-4">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product Card 2: Official Tournament T-Shirt -->
+            <div class="bg-gray-800 p-6 rounded-lg neon-blue-border neon-blue-box flex flex-col justify-between">
+                <div>
+                    <!-- Placeholder Image -->
+                    <img src="https://placehold.co/400x250/111/FF3366?text=QP+TEE" 
+                         alt="Quarter Pong T-Shirt" class="w-full rounded mb-4">
+
+                    <h2 class="text-3xl uppercase font-bold mb-2 rules-heading">
+                        QP Logo Tee
+                    </h2>
+                    <p class="text-xl font-bold neon-red-text mb-4">$TBD</p>
+                    <p class="rules-text text-lg mb-4">
+                        Rep your favorite party game in this classic black tee with logo. Available in S-XXL.
+                    </p>
+                </div>
+                <button onclick="console.log('Added Tee to cart')" 
+                        class="buy-button py-3 px-6 rounded-md uppercase font-bold text-xl mt-4">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product Card 3: Custom Quarters Pack -->
+            <div class="bg-gray-800 p-6 rounded-lg neon-blue-border neon-blue-box flex flex-col justify-between">
+                <div>
+                    <!-- Placeholder Image -->
+                    <img src="https://placehold.co/400x250/111/33CCFF?text=QP+BALLS" 
+                         alt="Quarter Pong Custom Balls" class="w-full rounded mb-4">
+
+                    <h2 class="text-3xl uppercase font-bold mb-2 rules-heading">
+                        Custom Balls
+                     </h2>
+                    <p class="text-xl font-bold neon-red-text mb-4">$TBD</p>
+                    <p class="rules-text text-lg mb-4">
+                        Pack of 6 official balls for the perfect bounce every time.
+                    </p>
+                </div>
+                <button onclick="console.log('Added Quarters to cart')" 
+                        class="buy-button py-3 px-6 rounded-md uppercase font-bold text-xl mt-4">
+                    Add to Cart
+                </button>
+            </div>
+            
+        </div>
+        
+    </main>
+    
+</body>
+</html>
