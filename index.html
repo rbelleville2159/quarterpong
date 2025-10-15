@@ -51,7 +51,7 @@
 
         /* Aspect Ratio Container for 800x577 image (577/800 = 72.125%) */
         .logo-aspect-ratio {
-            padding-bottom: 62.125%; 
+            padding-bottom: 28%; 
         }
     </style>
 </head>
@@ -70,17 +70,17 @@
 
         <!-- Large Logo / Banner Placeholder: Adjusted for 800x577 aspect ratio -->
         <div class="flex justify-center mb-10">
-            <!-- Inner container to cap max width at 800px and enforce aspect ratio -->
+            <!-- Inner container to cap max width at 420px (30% shorter than 600px) and enforce aspect ratio -->
             <div id="logo-area" 
                  class="w-full bg-black rounded-lg neon-blue-border relative logo-aspect-ratio" 
-                 style="max-width: 800px; height: 0; overflow: hidden;">
+                 style="max-width: 420px; height: 0; overflow: hidden;">
                 
                 <!-- The content inside is absolutely positioned to cover the height created by padding-bottom -->
                 <div class="absolute inset-0 flex items-center justify-center">
                     <img src="qpbwsolo.svg" 
                          alt="Quarter Pong Logo" 
-                         class="w-full h-full object-contain p-4"
-                         onerror="this.onerror=null; this.src='https://placehold.co/800x577/111/FF3366?text=Logo+File+Missing'; this.classList.remove('p-4');"
+                         class="w-full h-full object-contain p-0"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x577/111/FF3366?text=Logo+File+Missing'; this.classList.remove('p-4'); this.classList.add('p-0');"
                     >
                 </div>
             </div>
