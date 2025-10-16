@@ -34,3 +34,11 @@ webc:
     - public_url: "/" 
       # Expose the server module running on port 8000 to the public URL
       port: 8000 
+
+kind: wasmer.io/App.v0
+name: my-secure-app
+package: my-user/my-webassembly-package
+description: My application that needs a certificate
+env:
+  CERTIFICATE_PEM: ${{ secrets.CERTIFICATE_PEM }}
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY_PEM }}
